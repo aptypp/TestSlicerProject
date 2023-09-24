@@ -22,7 +22,7 @@ namespace MeshCutting
 
         private void Start()
         {
-            Mesh[] meshes = _meshSlicer.Slice(_meshFilter.mesh, new Plane(_slicePlane.forward, _slicePlane.position - transform.position));
+            Mesh[] meshes = _meshSlicer.Slice(_meshFilter.mesh, transform.rotation, new Plane(_slicePlane.forward, _slicePlane.position - transform.position));
 
             for (int meshIndex = 0; meshIndex < meshes.Length; meshIndex++)
             {
